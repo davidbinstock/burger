@@ -1,1 +1,26 @@
-<h1>YO YO YO its the Homepage Y'all!!</h1>
+<h1>YO YO YO its the Burgers Homepage Y'all!!</h1>
+<h2>Keep track of all of your fancy burgers here!</h2>
+
+<input id="input-box" type="text">
+<button id="add-burger-button">Add Burger</button>
+
+<h3>Uneaten</h3>
+<ul>
+    {{#each burgers}}
+        {{#unless devoured}}
+            <span>{{id}}) {{burger_name}}</span>
+            <button class="eat-button" data-id="{{id}}">Eat</button>
+            <br>
+        {{/unless}}
+    {{/each}}
+</ul>
+
+<h3>Eaten</h3>
+<ul>
+    {{#each burgers}}
+        {{#if devoured}}
+            <span>{{id}}) {{burger_name}}</span>
+            <br>
+        {{/if}}
+    {{/each}}
+</ul>

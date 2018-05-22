@@ -18,10 +18,10 @@ var orm = {
         var queryString = "INSERT INTO ?? SET ?"
         connection.query(
             queryString,
-            [tableName, {id: NULL, burger_name: newBurgerName, devoured: FALSE}],
+            [tableName, {burger_name: newBurgerName, devoured: false}],
             function(error, result){
                 if(error) throw error;
-                console.log(result);
+                //console.log(result);
                 ormCallback(result);
             }
         )
