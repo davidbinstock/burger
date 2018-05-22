@@ -3,6 +3,14 @@ $(document).ready(function(){
 
     $(document).on("click", ".eat-button", function(){
         console.log("Eat Button Clicked!")
+        var id = $(this).data("id")
+        $.ajax({
+           url: "/api/update/"+id,
+           type: "PUT"
+        }).then(function(){
+            console.log("Burger updated")
+            location.reload();
+        })
     });
     
     $("#add-burger-button").on("click", function(event){

@@ -27,6 +27,11 @@ router.post("/api/add", function(request, response){
 router.put("/api/update/:id", function(request, response){
     var burgerId = request.params.id;
     // call burger.update to update a new burger
+    burger.update(burgerId,function(result){
+        console.log("Controller Burger Updated")
+        console.log(result);
+        response.end();
+    })
 })
 
 module.exports = router;

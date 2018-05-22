@@ -13,8 +13,8 @@ var burger = {
         });
     },
 
-    update: function(setObj, conditionObj, modelCallback){
-        orm.updateOne("burgers",setObj, conditionObj, function(result){
+    update: function(burgerId, modelCallback){
+        orm.updateOne("burgers",{devoured: true}, {id: burgerId}, function(result){
             modelCallback(result);
         });
     }
