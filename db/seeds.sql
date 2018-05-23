@@ -5,5 +5,6 @@ INSERT INTO burgers
 VALUES 
     (NULL, 'Black Bean Burger', FALSE),
     (NULL, 'Portabello Mushroom Burger', FALSE),
-    (NULL, 'Quinia Corn Salsa Burger', FALSE)
+    (NULL, 'Quinoa Corn Salsa Burger', FALSE),
+    (NULL, 'Edamame Carrot Burger', FALSE)
 ;

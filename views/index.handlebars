@@ -1,55 +1,58 @@
-<div class="row">
-    <div class="col-12">
-        <div class="jumbotron">
-        <h1 class="display-4">Eat Them Burgers</h1>
-        <p class="lead">Yo yo yo, welcome to the "Eat Them Burgers" homepage (and only page) y'all!! </p>
-        <p class="lead">This is your all-in-one online tool for making up dumb burger names and indicating whether or not you've eaten them! Keep track of all of your fanciful burgers here!</p>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-12">
-        <input id="input-box" type="text">
-        <button id="add-burger-button">Add Burger</button>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-6">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Uneaten</h5>
-                <p class="card-text">These are the burgers you have left to eat!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="jumbotron text-center">
+                <h1 class="display-4">Eat Them Burgers</h1>
+                <p class="lead">Yo yo yo, welcome to the "Eat Them Burgers" home- (and only) page y'all!! </p>
+                <img src="/assets/images/burger1.png" alt="burger image">
+                <p class="lead">This is your all-in-one online tool for making up dumb burger names and indicating whether or not you've eaten them! Keep track of all of your fanciful burgers here!</p>
             </div>
-            <ul class="list-group list-group-flush">
-                    {{#each burgers}}
-                        {{#unless devoured}}
-                            <li class="list-group-item">
-                                <span>{{id}}) {{burger_name}}</span>
-                                <button class="eat-button" data-id="{{id}}">Eat</button>
-                            </li>
-                        {{/unless}}
-                    {{/each}}
-            </ul>
         </div>
     </div>
 
-    <div class="col-6">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Eaten</h5>
-                <p class="card-text">You have already eaten these...</p>
+    <div class="row">
+        <div class="col-12 text-center mb-4">
+            <input id="input-box" type="text">
+            <button id="add-burger-button" type="button" class="btn btn-success">Add Burger</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Uneaten</h5>
+                    <p class="card-text">These are the burgers you have left to eat!</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                        {{#each burgers}}
+                            {{#unless devoured}}
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <span>{{id}}) {{burger_name}}</span>
+                                    <button class="eat-button btn btn-info" type="button" data-id="{{id}}">Eat</button>
+                                </li>
+                            {{/unless}}
+                        {{/each}}
+                </ul>
             </div>
-            <ul class="list-group list-group-flush">
-                    {{#each burgers}}
-                        {{#if devoured}}
-                            <li class="list-group-item">
-                                <span>{{id}}) {{burger_name}}</span>
-                            </li>
-                        {{/if}}
-                    {{/each}}
-            </ul>
+        </div>
+
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Eaten</h5>
+                    <p class="card-text">You have already eaten these...</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                        {{#each burgers}}
+                            {{#if devoured}}
+                                <li class="list-group-item">
+                                    <span>{{id}}) {{burger_name}}</span>
+                                </li>
+                            {{/if}}
+                        {{/each}}
+                </ul>
+            </div>
         </div>
     </div>
 </div>
